@@ -1,0 +1,13 @@
+"D:\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/JetBrains/CLion 2023.3.4/bin/ninja/win/x64/ninja.exe" -G Ninja -S "C:\Users\Proto\Desktop\Coding\School\C\1.12.2024\zad 3" -B "C:\Users\Proto\Desktop\Coding\School\C\1.12.2024\zad 3\cmake-build-debug"
+-- Configuring done (0.1s)
+CMake Error at CMakeLists.txt:6 (add_executable):
+  Cannot find source file:
+
+    mystrings.c
+
+
+CMake Error at CMakeLists.txt:6 (add_executable):
+  No SOURCES given to target: zad_2
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
