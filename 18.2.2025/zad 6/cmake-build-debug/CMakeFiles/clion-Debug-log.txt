@@ -1,0 +1,1 @@
+CMakeLists.txt not found in C:\Users\Proto\Desktop\Coding\School\C\18.2.2025\zad 6 Select CMakeLists.txt
