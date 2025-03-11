@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 void showMenu() {
     printf("\nMenu:\n");
