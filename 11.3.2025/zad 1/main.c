@@ -1,15 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-void showMenu() {
-    printf("\nMenu:\n");
-    printf("1. Average grade\n");
-    printf("2. Add a grade\n");
-    printf("3. Delete last grade\n");
-    printf("4. Exit\n");
-    printf("Choose an option: ");
-}
-
-float calculateAverage(int* grades, int count) {
+float average(int* grades, int count) {
     if (count == 0) return 0;
     int sum = 0;
     for (int i = 0; i < count; ++i) {
@@ -21,68 +13,61 @@ float calculateAverage(int* grades, int count) {
 int main() {
     int numGrades;
 
-    do {
-        printf("Input the number of grades: ");
+    while (numGrades < 0) {
+        printf("Input number of grades: ");
         scanf("%d", &numGrades);
         if (numGrades < 0) printf("The number of grades can't be negative\n");
-    } while (numGrades < 0);
-
-    int* grades = (numGrades > 0) ? (int*)malloc(numGrades * sizeof(int)) : NULL;
-    if (numGrades > 0 && !grades) {
-        printf("Error with allocating memory\n");
-        return 1;
     }
 
+    int *grades = (int *)malloc(numGrades * sizeof(int));
+
     for (int i = 0; i < numGrades; ++i) {
-        do {
-            printf("Input a grade %d: ", i + 1);
+        while (grades[i] < 2 || grades[i] > 6) {
+            printf("Input grade %d: ", i + 1);
             scanf("%d", &grades[i]);
             if (grades[i] < 2 || grades[i] > 6) {
                 printf("The grade has to be between 2 and 6\n");
             }
-        } while (grades[i] < 2 || grades[i] > 6);
+        }
     }
 
     int choice;
-    do {
-        showMenu();
+    while (choice != 4) {
+        printf("\nMenu:\n");
+        printf("1. Average grade\n");
+        printf("2. Add a grade\n");
+        printf("3. Delete last grade\n");
+        printf("4. Exit\n");
+        printf("Choose an option: ");
         scanf("%d", &choice);
 
         switch (choice) {
             case 1:
-                printf("Average grade: %.2f\n", calculateAverage(grades, numGrades));
+                printf("Average grade: %.2f\n", average(grades, numGrades));
                 break;
 
-            case 2: {
+            case 2:
                 int newGrade;
-                do {
+                while (newGrade < 2 || newGrade > 6) {
                     printf("Input new grade): ");
                     scanf("%d", &newGrade);
                     if (newGrade < 2 || newGrade > 6) {
                         printf("The grade has to be between 2 and 6\n");
                     }
-                } while (newGrade < 2 || newGrade > 6);
-
-                int* temp = (int*)realloc(grades, (numGrades + 1) * sizeof(int));
-                if (!temp) {
-                    printf("Error with allocating memory\n");
-                    break;
                 }
+
+                int *temp = (int *)realloc(grades, (numGrades + 1) * sizeof(int));
 
                 grades = temp;
                 grades[numGrades] = newGrade;
                 numGrades++;
                 break;
-            }
 
             case 3:
                 if (numGrades > 0) {
                     numGrades--;
-                    int* temp = (numGrades > 0) ? (int*)realloc(grades, numGrades * sizeof(int)) : NULL;
-                    if (numGrades > 0 && !temp) {
-                        printf("Error with allocating memory\n");
-                        break;
-                    }
+                    int *temp = (int *)realloc(grades, numGrades * sizeof(int));
+
                     grades = temp;
                     printf("The last grade is deleted\n");
                 } else {
@@ -91,13 +76,12 @@ int main() {
                 break;
 
             case 4:
-                printf("Exiting\n");
                 break;
 
             default:
                 printf("Invalid choice\n");
         }
-    } while (choice != 4);
+    }
 
     free(grades);
     return 0;
