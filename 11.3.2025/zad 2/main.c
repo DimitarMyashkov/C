@@ -58,7 +58,6 @@ int main() {
                 }
 
             case 2:
-                // Принтиране на дневника
                 printf("\n%-15s", "Име");
                 for (int i = 0; i < numSubjects; i++) {
                     printf("%-15s", subjects[i]);

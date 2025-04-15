@@ -23,13 +23,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aad4e05-9170-4b78-8729-b0dbf4250c05" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../11.3.2025/zad 1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../11.3.2025/zad 1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../11.3.2025/zad 1/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../../11.3.2025/zad 1/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../11.3.2025/zad 1/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../11.3.2025/zad 1/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../11.3.2025/zad 1/cmake-build-debug/CMakeFiles/zad_1.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../11.3.2025/zad 1/cmake-build-debug/CMakeFiles/zad_1.dir/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../11.3.2025/zad 1/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../11.3.2025/zad 1/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../11.3.2025/zad 1/cmake-build-debug/zad_1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../11.3.2025/zad 1/cmake-build-debug/zad_1.exe" afterDir="false" />
+    <list default="true" id="9aad4e05-9170-4b78-8729-b0dbf4250c05" name="Changes" comment="updating the program">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.exe" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +88,11 @@
   }
 }</component>
   <component name="RunManager" selected="C/C++ File.main.c">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="zad_2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="zad_2" TARGET_NAME="zad_2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="zad_2" RUN_TARGET_NAME="zad_2">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -99,8 +105,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.zad_2" />
       <item itemvalue="C/C++ File.main.c" />
+      <item itemvalue="CMake Application.zad_2" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -114,10 +120,38 @@
       <workItem from="1741709801288" duration="516000" />
       <workItem from="1742075945963" duration="23000" />
       <workItem from="1742128983076" duration="857000" />
+      <workItem from="1742129859261" duration="269000" />
+      <workItem from="1742289718249" duration="277000" />
     </task>
+    <task id="LOCAL-00001" summary="updating the program">
+      <option name="closed" value="true" />
+      <created>1742130038104</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742130038104</updated>
+    </task>
+    <task id="LOCAL-00002" summary="updating the program">
+      <option name="closed" value="true" />
+      <created>1742130050752</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742130050752</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="updating the program" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating the program" />
   </component>
 </project>
