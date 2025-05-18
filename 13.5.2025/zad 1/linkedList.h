@@ -1,11 +1,15 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
-typedef int ListType;
+typedef struct Task {
+    char name[100];
+    enum TaskStatus { NEW, STARTED, FINISHED } status;
+} Task;
+
 typedef unsigned int uint;
 
 typedef struct Node {
-    ListType value;
+    Task value;
     struct Node * next;
 } Node;
 
@@ -16,18 +20,18 @@ typedef struct {
 
 LinkedList init();
 
-void pushBack(LinkedList * list, ListType value);
-void pushFront(LinkedList * list, ListType value);
-void push(LinkedList * list, uint index, ListType value);
+void pushBack(LinkedList * list, Task value);
+void pushFront(LinkedList * list, Task value);
+void push(LinkedList * list, uint index, Task value);
 
-ListType popBack(LinkedList * list);
-ListType popFront(LinkedList * list);
-ListType pop(LinkedList * list, uint index);
+Task popBack(LinkedList * list);
+Task popFront(LinkedList * list);
+Task pop(LinkedList * list, uint index);
 
 Node * getNode(LinkedList * list, uint index);
 
-ListType get(LinkedList * list, uint index);
-void set(LinkedList * list, uint index, ListType value);
+Task get(LinkedList * list, uint index);
+void set(LinkedList * list, uint index, Task value);
 
 void release(LinkedList * list);
 

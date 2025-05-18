@@ -1,36 +1,102 @@
 #include <stdio.h>
-#include "LinkedList.h"
+#include <stdlib.h>
+#include <string.h>
+#include "linkedList.h"
 
-void printLinkedList(LinkedList * linkedList) {
-    Node * currentNode = linkedList->head;
-    while (currentNode != NULL) {
-        printf("%d ", currentNode->value);
-        currentNode = currentNode->next;
+const char* statusToString(enum TaskStatus status) {
+    switch (status) {
+        case NEW: return "New";
+        case STARTED: return "Started";
+        case FINISHED: return "Finished";
+        default: return "Unknown";
     }
-    printf("\n");
 }
 
-int main(void) {
+void addTask(LinkedList* list, char* name, int priority) {
+    Task newTask;
+    strncpy(newTask.name, name, sizeof(newTask.name));
+    newTask.status = NEW;
 
-    printf("Running LinkedList tests \n");
+    if (priority <= 0) priority = 1;
+    if (priority > list->size) priority = list->size + 1;
 
-    LinkedList linkedList = init();
-    printf("Assert initial head == NULL: %d\n", linkedList.head == NULL);
-    printf("Assert initial size == 0: %d\n", linkedList.size == 0);
+    push(list, priority - 1, newTask);
+}
 
-    pushFront(&linkedList, 10);
-    pushFront(&linkedList, 15);
-    pushFront(&linkedList, 20);
-    printLinkedList(&linkedList);
+void changeTaskStatus(LinkedList* list, int priority, enum TaskStatus newStatus) {
+    if (priority <= 0 || priority > list->size) {
+        printf("Invalid priority!\n");
+        return;
+    }
+    Task task = get(list, priority - 1);
+    task.status = newStatus;
+    set(list, priority - 1, task);
+}
 
-    Node * secondNode = getNode(&linkedList, 1);
-    printf("Assert second node value == 15: %d\n", secondNode->value == 15);
+void deleteTask(LinkedList* list, int priority) {
+    if (priority <= 0 || priority > list->size) {
+        printf("Invalid priority!\n");
+        return;
+    }
+    pop(list, priority - 1);
+}
 
-    ListType secondValue = get(&linkedList, 1);
-    printf("Assert second  value == 15: %d\n", secondValue == 15);
+void printTasks(LinkedList* list) {
+    for (int i = 0; i < list->size; i++) {
+        Task task = get(list, i);
+        printf("%d. %s - %s\n", i + 1, task.name, statusToString(task.status));
+    }
+}
 
-    push(&linkedList, 1, 99);
-    printLinkedList(&linkedList);
+void freeMemory(LinkedList* list) {
+    for (int i = 0; i < list->size; i++) {
+        pop(list, i);
+    }
+}
+
+int main() {
+    LinkedList tasks = init();
+    int choice;
+
+    while (1) {
+        printf("\n1. Add task\n");
+        printf("2. Change status\n");
+        printf("3. Delete task\n");
+        printf("4. Show all tasks\n");
+        printf("5. Exit\n");
+        printf("Choice:\n");
+        scanf("%d", &choice);
+        getchar();
+
+        if (choice == 1) {
+            char name[100];
+            int prio;
+            printf("Task name: ");
+            fgets(name, sizeof(name), stdin);
+            name[strcspn(name, "\n")] = 0;
+            printf("priority: ");
+            scanf("%d", &prio);
+            addTask(&tasks, name, prio);
+        } else if (choice == 2) {
+            int prio, stat;
+            printf("Task number: ");
+            scanf("%d", &prio);
+            printf("Status (0 = New, 1 = Started, 2 = Finished): ");
+            scanf("%d", &stat);
+            changeTaskStatus(&tasks, prio, stat);
+        } else if (choice == 3) {
+            int prio;
+            printf("Task number: ");
+            scanf("%d", &prio);
+            deleteTask(&tasks, prio);
+        } else if (choice == 4) {
+            printTasks(&tasks);
+        } else {
+            break;
+        }
+    }
+
+    freeMemory(&tasks);
 
     return 0;
 }
