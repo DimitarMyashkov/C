@@ -1,0 +1,3 @@
+C:/Users/Proto/Desktop/Coding/School/C/Binary Search/cmake-build-debug/CMakeFiles/Binary_Search.dir
+C:/Users/Proto/Desktop/Coding/School/C/Binary Search/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Proto/Desktop/Coding/School/C/Binary Search/cmake-build-debug/CMakeFiles/rebuild_cache.dir
