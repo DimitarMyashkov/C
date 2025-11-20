@@ -220,10 +220,11 @@ int main() {
     printf("Tree after balancing:\n");
     bst_print_bfs(tree->root);
 
-    if (is_balanced(tree->root))
+    if (is_balanced(tree->root)) {
         printf("tree = balanced\n");
-    else
+    } else {
         printf("tree != balanced\n");
+    }
 
     return 0;
 }
