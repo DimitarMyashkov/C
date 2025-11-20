@@ -1,1 +1,1 @@
-This repository contains all the tasks accomplished in the 2024-2025 study year in TUES
+This repository contains all the tasks accomplished in the period 2024-2026 in TUES
