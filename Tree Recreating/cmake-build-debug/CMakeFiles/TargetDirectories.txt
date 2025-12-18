@@ -1,0 +1,3 @@
+C:/Users/Proto/Coding/School/C/Tree Recreating/cmake-build-debug/CMakeFiles/Tree_Recreating.dir
+C:/Users/Proto/Coding/School/C/Tree Recreating/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Proto/Coding/School/C/Tree Recreating/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+C:/Users/Proto/Coding/School/C/School Schedule Tree/cmake-build-debug/CMakeFiles/School_Schedule_Tree.dir
+C:/Users/Proto/Coding/School/C/School Schedule Tree/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Proto/Coding/School/C/School Schedule Tree/cmake-build-debug/CMakeFiles/rebuild_cache.dir
