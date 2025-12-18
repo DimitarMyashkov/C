@@ -90,9 +90,7 @@ int addSubject(TreeNode* node, Subject* subj) {
         int placed = 0;
 
         for (int i = 0; i < SLOTS; i++) {
-            if (isFree(&node->schedule, i, subj->length) &&
-                satisfiesConstraints(subj, i)) {
-
+            if (isFree(&node->schedule, i, subj->length) && satisfiesConstraints(subj, i)) {
                 Schedule ns = placeSubject(&node->schedule, subj, i);
                 node->children[node->childCount++] = createNode(ns);
                 placed = 1;
@@ -103,8 +101,9 @@ int addSubject(TreeNode* node, Subject* subj) {
 
     int newCount = 0;
     for (int i = 0; i < node->childCount; i++) {
-        if (addSubject(node->children[i], subj))
+        if (addSubject(node->children[i], subj)) {
             node->children[newCount++] = node->children[i];
+        }
     }
 
     node->childCount = newCount;
@@ -113,18 +112,24 @@ int addSubject(TreeNode* node, Subject* subj) {
 
 void printSchedule(Schedule* s) {
     for (int i = 0; i < SLOTS; i++) {
-        if (s->slots[i] == NULL) printf("[----]");
-        else printf("[%s, (%s)]", s->slots[i]->title, s->slots[i]->teacherName);
+        if (s->slots[i] == NULL) {
+            printf("[----]");
+        } else {
+            printf("[%s, (%s)]", s->slots[i]->title, s->slots[i]->teacherName);
+        }
     }
     printf("\n");
 }
 
 void printTree(TreeNode* node, int depth) {
-    for (int i = 0; i < depth; i++) printf("  ");
+    for (int i = 0; i < depth; i++) {
+        printf("  ");
+    }
     printSchedule(&node->schedule);
 
-    for (int i = 0; i < node->childCount; i++)
+    for (int i = 0; i < node->childCount; i++) {
         printTree(node->children[i], depth + 1);
+    }
 }
 
 int main() {
@@ -171,10 +176,11 @@ int main() {
             case 5: {
                 TreeNode* badRoot = createNode(empty);
                 addSubject(badRoot, &bio);
-                if (!addSubject(badRoot, &chem))
+                if (!addSubject(badRoot, &chem)) {
                     printf("all branches pruned\n");
-                else
+                } else {
                     printTree(badRoot, 0);
+                }
                 break;
             }
             case 0:
@@ -184,7 +190,6 @@ int main() {
                 printf("invalid choice\n");
         }
     } while (choice != 0);
-
 
     return 0;
 }
